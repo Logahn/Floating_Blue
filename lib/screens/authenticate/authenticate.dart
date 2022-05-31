@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
 
 class Authenticate extends StatefulWidget {
   const Authenticate({Key? key}) : super(key: key);
@@ -10,6 +11,8 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('Authenticate'));
+    return Container(
+      child: SignIn(),
+    );
   }
 }
