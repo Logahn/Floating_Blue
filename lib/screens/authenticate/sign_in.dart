@@ -14,7 +14,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Colors.blue[200],
       appBar: AppBar(
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
@@ -30,7 +30,7 @@ class _SignInState extends State<SignIn> {
 //*              print('error signing in');
 //*            } else {
 //*              print('signed in');
-//*              print(result);
+//*              print(result.uid);
 //*            }
           },
         ),
