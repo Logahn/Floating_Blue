@@ -11,7 +11,7 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
-  
+
   String email = "";
   String password = "";
 
@@ -23,6 +23,13 @@ class _SignInState extends State<SignIn> {
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
         title: const Text('Sign in to Paytrybe'),
+        actions: <Widget>[
+        FlatButton.icon(
+          icon: Icon(Icons.person),
+          label: Text('Register'),
+          onPressed(){
+
+          })]
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
