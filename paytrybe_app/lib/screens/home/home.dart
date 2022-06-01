@@ -5,8 +5,20 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:Text('Home')
+    return Scaffold(
+      backgroundColor: Colors.blue[200],
+      appBar: AppBar(
+        title: Text('Paytrybe Home Page'),
+        backgroundColor: Colors.blue[400],
+        elevation: 0.0,
+        actions: <Widget>[
+          TextButton.icon(
+            icon: const Icon(Icons.person),
+            label: const Text("Profile"),
+            onPressed: () {},
+          )
+        ],
+      ),
     );
   }
 }

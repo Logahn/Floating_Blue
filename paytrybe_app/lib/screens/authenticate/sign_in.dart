@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paytrybe_app/services/auth.dart';
+import 'package:paytrybe_app/screens/home/home.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key? key}) : super(key: key);
@@ -25,6 +26,12 @@ class _SignInState extends State<SignIn> {
         child: ElevatedButton(
           child: const Text('sign in Anonymous'),
           onPressed: () async {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Home(),
+              ),
+            );
 //*         dynamic result = await _auth.SignInAnon()
 //*           if(result == null){
 //*              print('error signing in');
