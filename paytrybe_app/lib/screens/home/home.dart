@@ -9,15 +9,14 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue[200],
       appBar: AppBar(
-        title: Text('Paytrybe Home Page'),
+        title: Text('Home Page'),
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
             icon: const Icon(Icons.person, color: Colors.white),
-            label: Text('Profile',
-              style: TextStyle(color: Colors.white)),
-              onPressed: () async {
+            label: Text('Profile', style: TextStyle(color: Colors.white)),
+            onPressed: () async {
               Navigator.push(
                 context,
                 MaterialPageRoute(

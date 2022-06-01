@@ -4,6 +4,8 @@ import 'package:paytrybe_app/screens/home/home.dart';
 import 'package:provider/provider.dart';
 import 'package:paytrybe_app/models/user.dart';
 
+import 'landingPage.dart';
+
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class Wrapper extends StatelessWidget {
     if (user == 0) {
       return const Authenticate();
     } else {
-      return const Home();
+      return const LandingPage();
     }
   }
 }

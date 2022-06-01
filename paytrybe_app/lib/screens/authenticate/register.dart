@@ -7,7 +7,7 @@ import '../../shared/constants.dart';
 
 class Register extends StatefulWidget {
   //*final Function toggleView;
- //* Register({required this.toggleView});
+  //* Register({required this.toggleView});
 
   @override
   State<Register> createState() => _RegisterState();
@@ -16,7 +16,6 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
-
 
   String email = "";
   String password = "";
@@ -28,48 +27,63 @@ class _RegisterState extends State<Register> {
       appBar: AppBar(
           backgroundColor: Colors.blue[400],
           elevation: 0.0,
-          title: const Text('Sign up to Paytrybe'),
+          title: const Text('Sign up'),
           actions: <Widget>[
             FlatButton.icon(
-              icon: Icon(Icons.person),
-              label: Text('Sign In'),
-                onPressed: () => Home(),
-          //*    onPressed: () => widget.toggleView(),
+              icon: Icon(Icons.person, color: Colors.white),
+              label: Text('Sign In', style: TextStyle(color: Colors.white)),
+              onPressed: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SignIn(),
+                  ),
+                );
+              },
+              //*    onPressed: () => widget.toggleView(),
             )
           ]),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
-          key: _formKey,
+            key: _formKey,
             child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            TextFormField(
-              decoration: textInputDecoration.copyWith(hintText: 'Email'),
-             onChanged: (val) {
-              setState(() => email = val);
-            }),
-            SizedBox(height: 20.0),
-            TextFormField(
-              decoration: textInputDecoration.copyWith(hintText: 'Password'),
-              onChanged: (val) {
-              setState(() => email = val);
-            }),
-            const SizedBox(height: 20.0),
-            RaisedButton(
-                color: Color.fromRGBO(4, 17, 29, 0.004),
-                child: const Text(
-                  'Register',
-                  style: TextStyle(color: Colors.white),
-                ),
-                 onPressed: () => Home(),
-                //*onPressed: () async {
+              children: <Widget>[
+                SizedBox(height: 20.0),
+                TextFormField(
+                    decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    }),
+                SizedBox(height: 20.0),
+                TextFormField(
+                    decoration:
+                        textInputDecoration.copyWith(hintText: 'Password'),
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    }),
+                const SizedBox(height: 20.0),
+                RaisedButton(
+                  color: Color.fromRGBO(4, 17, 29, 0.004),
+                  child: const Text(
+                    'Register',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Home(),
+                      ),
+                    );
+                  },
+                  //*onPressed: () async {
                   //*  print(email);
                   //*  print(password);
-                //*}
+                  //*}
                 )
-          ],
-        )),
+              ],
+            )),
       ),
     );
   }
