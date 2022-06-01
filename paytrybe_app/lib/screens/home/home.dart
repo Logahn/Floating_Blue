@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:paytrybe_app/screens/authenticate/authenticate.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,10 +13,18 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
         actions: <Widget>[
-          TextButton.icon(
-            icon: const Icon(Icons.person),
-            label: const Text("Profile"),
-            onPressed: () {},
+          FlatButton.icon(
+            icon: const Icon(Icons.person, color: Colors.white),
+            label: Text('Profile',
+              style: TextStyle(color: Colors.white)),
+              onPressed: () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Authenticate(),
+                ),
+              );
+            },
           )
         ],
       ),

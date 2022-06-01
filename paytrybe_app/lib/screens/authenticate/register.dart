@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
 import 'package:paytrybe_app/services/auth.dart';
-import 'package:paytrybe_app/screens/home/home.dart';
 
-class SignIn extends StatefulWidget {
-  SignIn({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  Register({Key? key}) : super(key: key);
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
+
   final AuthService _auth = AuthService();
-  
   String email = "";
   String password = "";
 
@@ -22,7 +22,7 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
-        title: const Text('Sign in to Paytrybe'),
+        title: const Text('Sign up to Paytrybe'),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -43,7 +43,7 @@ class _SignInState extends State<SignIn> {
             RaisedButton(
                 color: Color.fromRGBO(4, 17, 29, 0.004),
                 child: Text(
-                  'Sign In',
+                  'Register',
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
