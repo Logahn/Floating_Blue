@@ -23,7 +23,7 @@ class _SignInState extends State<SignIn> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: ElevatedButton(
-          child: const Text('sign in anonymous'),
+          child: const Text('sign in Anonymous'),
           onPressed: () async {
 //*         dynamic result = await _auth.SignInAnon()
 //*           if(result == null){
