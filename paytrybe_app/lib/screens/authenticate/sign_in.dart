@@ -22,7 +22,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[200],
+      backgroundColor: Colors.blue[400],
       appBar: AppBar(
           backgroundColor: Colors.blue[400],
           elevation: 0.0,
@@ -71,7 +71,7 @@ class _SignInState extends State<SignIn> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Home(),
+                    builder: (context) =>  Home(),
                   ),
                 );
               },
