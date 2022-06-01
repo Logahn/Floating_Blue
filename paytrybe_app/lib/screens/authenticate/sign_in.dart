@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:paytrybe_app/services/auth.dart';
 import 'package:paytrybe_app/screens/home/home.dart';
 
+import '../../shared/constants.dart';
+
 class SignIn extends StatefulWidget {
 
-  final Function toggleView;
-  SignIn({ required this.toggleView });
+  //* final Function toggleView;
+  //* SignIn({ required this.toggleView });
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -39,11 +41,15 @@ class _SignInState extends State<SignIn> {
             child: Column(
           children: <Widget>[
             SizedBox(height: 20.0),
-            TextFormField(onChanged: (val) {
+            TextFormField(
+              decoration: textInputDecoration.copyWith(hintText: 'Email'),
+              onChanged: (val) {
               setState(() => email = val);
             }),
             SizedBox(height: 20.0),
+           
             TextFormField(
+              decoration: textInputDecoration.copyWith(hintText: 'Password'),
                 obscureText: true,
                 onChanged: (val) {
                   setState(() => password = val);
@@ -56,8 +62,8 @@ class _SignInState extends State<SignIn> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
-                  print(email);
-                  print(password);
+                  //*print(email);
+                  //*print(password);
                 })
           ],
         )),
