@@ -3,7 +3,9 @@ import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
 import 'package:paytrybe_app/services/auth.dart';
 
 class Register extends StatefulWidget {
-  Register({Key? key}) : super(key: key);
+  final Function toggleView;
+  Register({ required this.toggleView });
+  
 
   @override
   State<Register> createState() => _RegisterState();
@@ -23,6 +25,12 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
         title: const Text('Sign up to Paytrybe'),
+        actions: <Widget>[
+        FlatButton.icon(
+          icon: Icon(Icons.person),
+          label: Text('Sign In'),
+          onPressed:() => widget.toggleView(),
+        )]
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -39,10 +47,10 @@ class _RegisterState extends State<Register> {
                 onChanged: (val) {
                   setState(() => password = val);
                 }),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             RaisedButton(
                 color: Color.fromRGBO(4, 17, 29, 0.004),
-                child: Text(
+                child: const Text(
                   'Register',
                   style: TextStyle(color: Colors.white),
                 ),

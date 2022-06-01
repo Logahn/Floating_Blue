@@ -3,7 +3,9 @@ import 'package:paytrybe_app/services/auth.dart';
 import 'package:paytrybe_app/screens/home/home.dart';
 
 class SignIn extends StatefulWidget {
-  SignIn({Key? key}) : super(key: key);
+
+  final Function toggleView;
+  SignIn({ required this.toggleView });
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -27,7 +29,7 @@ class _SignInState extends State<SignIn> {
         FlatButton.icon(
           icon: Icon(Icons.person),
           label: Text('Register'),
-          onPressed(){
+          onPressed:(){
 
           })]
       ),
