@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class ApiClient {
   final Uri currencyURL = Uri.https("free.currconv.com", "/api/v7/currencies",
-      {"apiKey": "4f6ef6f6c136f9f2e860"});
+      {"apiKey": "c0932438e4a25a8dc675"});
 
   Future<List<String>> getCurrencies() async {
     http.Response res = await http.get(currencyURL);

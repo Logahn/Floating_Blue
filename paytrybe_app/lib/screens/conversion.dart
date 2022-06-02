@@ -6,14 +6,14 @@ import '../shared/constants.dart';
 import 'authenticate/authenticate.dart';
 
 class Conversion extends StatelessWidget {
-  const Conversion({Key? key}) : super(key: key);
+  Conversion({Key? key}) : super(key: key);
 
   ApiClient client = ApiClient();
-  List<String> currencies;
-  String from;
-  String to;
+ late List<String> currencies;
+  String from = "";
+  String to = "";
 
-  double rate;
+  double rate = 0;
   String result = "";
 
   // Future<List<String>> getCurrencyList() async {
@@ -24,7 +24,8 @@ class Conversion extends StatelessWidget {
   void initState() {
 //   super.initState();
     (() async {
-      List<String> list = await client.getCurrencies();
+      //List<String> list = await client.getCurrencies();
+      List<String> list = ["NGN", "USD", "RUB", "CAD","INR"];
       setState(() {
         currencies = list;
       });
@@ -105,9 +106,9 @@ class Conversion extends StatelessWidget {
                                 to = temp;
                               });
                             },
-                            child: Icon(Icons.swap_horiz),
+                            child: const Icon(Icons.swap_horiz),
                             elevation: 0.0,
-                            backgroundColor: Colors.blue[100],
+                            backgroundColor: Color.fromARGB(209, 0, 78, 142),
                           ),
                           customDropDown(currencies, to, (val) {
                             setState(() {
@@ -135,7 +136,7 @@ class Conversion extends StatelessWidget {
                           ),
                           Text(
                             result,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 24.0,
                                 fontWeight: FontWeight.bold),
