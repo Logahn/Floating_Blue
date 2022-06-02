@@ -5,31 +5,33 @@ import 'package:paytrybe_app/screens/authenticate/register.dart';
 import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
 
 class Home extends StatelessWidget {
-  Home({Key? key}) : super(key: key);
-  PageController pageController = PageController();
-  // List<Widget> pages = [Home(), Convert(), History()];
+  const Home({Key? key}) : super(key: key);
 
-  List<Widget> pages = [Home(), SignIn(), Register()];
-  int selectIndex = 0;
+  // PageController pageController = PageController();
+  // // List<Widget> pages = [Home(), Convert(), History()];
 
-  void onPageChanged(int index) {
-    setState(() {
-      selectIndex = index;
-    });
-  }
+  // List<Widget> pages = [Home(), SignIn(), Register()];
+  // int selectIndex = 0;
 
-  void onItemTap(int selectedItems) {
-    pageController.jumpToPage(selectedItems);
-  }
+  // void onPageChanged(int index) {
+  //   setState(() {
+  //     selectIndex = index;
+  //   });
+  // }
+
+  // void onItemTap(int selectedItems) {
+  //   pageController.jumpToPage(selectedItems);
+  // }
 
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(
-          controller: pageController,
-          children: pages,
-          onPageChanged: onPageChanged,
-        ),
+            // controller: pageController,
+            // children: pages,
+            // onPageChanged: onPageChanged,
+            ),
         backgroundColor: Colors.blue[200],
         appBar: AppBar(
           title: Image.asset('images/paytrybe_logo.png', fit: BoxFit.cover),
@@ -53,22 +55,19 @@ class Home extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Color.fromARGB(255, 5, 71, 125),
-          onTap: onItemTap,
-          items: [
+          // onTap: onItemTap,
+          items: const [
             BottomNavigationBarItem(
               label: 'Home',
-              icon: Icon(Icons.home_filled,
-                  color: selectIndex == 0 ? Colors.blue[200] : Colors.white),
+              icon: Icon(Icons.home_filled, color: Colors.white),
             ),
             BottomNavigationBarItem(
               label: 'Convert Money',
-              icon: Icon(Icons.currency_exchange_sharp,
-                  color: selectIndex == 1 ? Colors.blue[200] : Colors.white),
+              icon: Icon(Icons.currency_exchange_sharp, color: Colors.white),
             ),
             BottomNavigationBarItem(
               label: 'History',
-              icon: Icon(Icons.history,
-                  color: selectIndex == 2 ? Colors.blue[200] : Colors.white),
+              icon: Icon(Icons.history, color: Colors.white),
             ),
           ],
         )

@@ -25,7 +25,7 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       backgroundColor: Colors.blue[200],
       appBar: AppBar(
-          backgroundColor: Colors.blue[400],
+          backgroundColor: Colors.blue[200],
           elevation: 0.0,
           title: const Text('Sign up'),
           actions: <Widget>[
@@ -73,7 +73,7 @@ class _RegisterState extends State<Register> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>  Home(),
+                        builder: (context) => Home(),
                       ),
                     );
                   },

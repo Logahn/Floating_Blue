@@ -3,6 +3,8 @@ import 'package:paytrybe_app/screens/authenticate/authenticate.dart';
 import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
 import 'package:paytrybe_app/screens/home/home.dart';
 
+import '../shared/loading.dart';
+
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
@@ -16,18 +18,18 @@ class LandingPage extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
-              icon: const Icon(Icons.monetization_on_rounded,
-                  color: Colors.white),
-              label: Text('Rates', style: TextStyle(color: Colors.white)),
-              onPressed: () async {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Home(),
-                  ),
-                );
-              },
-            ),
+                icon: const Icon(Icons.monetization_on_rounded,
+                    color: Colors.white),
+                label:
+                    const Text('Rates', style: TextStyle(color: Colors.white)),
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Loading(),
+                    ),
+                  );
+                }),
             FlatButton.icon(
               icon: const Icon(Icons.person, color: Colors.white),
               label:

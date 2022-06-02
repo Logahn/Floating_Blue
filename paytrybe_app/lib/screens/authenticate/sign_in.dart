@@ -16,6 +16,8 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
 
+  bool loading = false;
+
   String email = "";
   String password = "";
 
@@ -71,7 +73,7 @@ class _SignInState extends State<SignIn> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  Home(),
+                    builder: (context) => Home(),
                   ),
                 );
               },
