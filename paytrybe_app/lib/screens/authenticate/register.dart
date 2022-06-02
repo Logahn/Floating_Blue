@@ -23,11 +23,11 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[200],
+      backgroundColor: Colors.blue[500],
       appBar: AppBar(
-          backgroundColor: Colors.blue[200],
+          backgroundColor: Colors.blue[500],
           elevation: 0.0,
-          title: const Text('Sign up'),
+          title: const Text('Registeration Page'),
           actions: <Widget>[
             FlatButton.icon(
               icon: Icon(Icons.person, color: Colors.white),
@@ -73,7 +73,7 @@ class _RegisterState extends State<Register> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => SignIn(),
                       ),
                     );
                   },

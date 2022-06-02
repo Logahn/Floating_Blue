@@ -9,7 +9,7 @@ class Conversion extends StatelessWidget {
   Conversion({Key? key}) : super(key: key);
 
   ApiClient client = ApiClient();
- late List<String> currencies;
+  late List<String> currencies = [];
   String from = "";
   String to = "";
 
@@ -25,7 +25,7 @@ class Conversion extends StatelessWidget {
 //   super.initState();
     (() async {
       //List<String> list = await client.getCurrencies();
-      List<String> list = ["NGN", "USD", "RUB", "CAD","INR"];
+      List<String> list = ["NGN", "USD", "RUB", "CAD", "INR"];
       setState(() {
         currencies = list;
       });
@@ -46,6 +46,9 @@ class Conversion extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(
+                  height: 30,
+                ),
                 Container(
                     width: 500,
                     child: const Text(

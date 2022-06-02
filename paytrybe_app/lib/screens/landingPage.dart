@@ -3,8 +3,10 @@ import 'package:paytrybe_app/screens/authenticate/authenticate.dart';
 import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
 import 'package:paytrybe_app/screens/history.dart';
 import 'package:paytrybe_app/screens/home/home.dart';
+import 'package:paytrybe_app/screens/top_card.dart';
 
 import '../shared/loading.dart';
+import 'conversion.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -27,7 +29,7 @@ class LandingPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => History(),
+                      builder: (context) => Conversion(),
                     ),
                   );
                 }),
