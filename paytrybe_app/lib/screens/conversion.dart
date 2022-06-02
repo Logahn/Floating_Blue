@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:paytrybe_app/screens/api_client.dart';
+import 'package:paytrybe_app/screens/currency_dropdown.dart';
 
 import '../shared/constants.dart';
 import 'authenticate/authenticate.dart';
 
 class Conversion extends StatelessWidget {
   const Conversion({Key? key}) : super(key: key);
+
+  ApiClient client = ApiClient();
+  List<String> currencies;
+  String from;
+  String to;
+
+  double rate;
+  String result = "";
+
+  // Future<List<String>> getCurrencyList() async {
+  //   return await client.getCurrencies();
+  // }
+
+  @override
+  void initState() {
+//   super.initState();
+    (() async {
+      List<String> list = await client.getCurrencies();
+      setState(() {
+        currencies = list;
+      });
+    })();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +63,13 @@ class Conversion extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TextField(
+                      onSubmitted: (value) async {
+                        rate = await client.getRate(from, to);
+                        setState(() {
+                          result =
+                              (rate * double.parse(value)).toStringAsFixed(3);
+                        });
+                      },
                       decoration: textInputDecoration.copyWith(
                         hintText: 'You Send',
                         hintStyle: TextStyle(
@@ -47,19 +79,71 @@ class Conversion extends StatelessWidget {
                         ),
                         filled: true,
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.black,
                           fontSize: 24.0,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.left,
                       keyboardType: TextInputType.number,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     Row(
-                      children: [],
-                    )
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          customDropDown(currencies, from, (val) {
+                            setState(() {
+                              from = val;
+                            });
+                          }),
+                          FloatingActionButton(
+                            onPressed: () {
+                              String temp = from;
+                              setState(() {
+                                from = to;
+                                to = temp;
+                              });
+                            },
+                            child: Icon(Icons.swap_horiz),
+                            elevation: 0.0,
+                            backgroundColor: Colors.blue[100],
+                          ),
+                          customDropDown(currencies, to, (val) {
+                            setState(() {
+                              to = val;
+                            });
+                          }),
+                        ]),
+                    const SizedBox(height: 20.0),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Column(
+                        children: [
+                          const Text(
+                            "You receive",
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 16.0,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          Text(
+                            result,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.left,
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 )))
               ],
@@ -67,4 +151,6 @@ class Conversion extends StatelessWidget {
           ),
         ));
   }
+
+  void setState(Null Function() param0) {}
 }
