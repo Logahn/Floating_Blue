@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:paytrybe_app/screens/authenticate/authenticate.dart';
 import 'package:paytrybe_app/screens/authenticate/sign_in.dart';
+import 'package:paytrybe_app/screens/history.dart';
 import 'package:paytrybe_app/screens/home/home.dart';
 
 import '../shared/loading.dart';
@@ -26,7 +27,7 @@ class LandingPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Loading(),
+                      builder: (context) => History(),
                     ),
                   );
                 }),
