@@ -30,18 +30,18 @@ class _SignInState extends State<SignIn> {
           elevation: 0.0,
           title: const Text('Log In Page'),
           actions: <Widget>[
-            FlatButton.icon(
-              icon: Icon(Icons.person, color: Colors.white),
-              label: Text('Register', style: TextStyle(color: Colors.white)),
-              onPressed: () async {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Register(),
-                  ),
-                );
-              },
-            )
+            // FlatButton.icon(
+            //   icon: Icon(Icons.person, color: Colors.white),
+            //   label: Text('Register', style: TextStyle(color: Colors.white)),
+            //   onPressed: () async {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => Register(),
+            //       ),
+            //     );
+            //   },
+            // )
           ]),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -54,7 +54,7 @@ class _SignInState extends State<SignIn> {
                 onChanged: (val) {
                   setState(() => email = val);
                 }),
-            SizedBox(height: 20.0),
+            SizedBox(height: 40.0),
             TextFormField(
                 decoration: textInputDecoration.copyWith(hintText: 'Password'),
                 obscureText: true,
@@ -81,7 +81,28 @@ class _SignInState extends State<SignIn> {
               //*print(email);
               //*print(password);
               //*}
-            )
+            ),
+            SizedBox(height: 20.0),
+            RaisedButton(
+              color: Color.fromRGBO(4, 17, 29, 0.004),
+              child: Text(
+                'Register',
+                style: TextStyle(color: Colors.white),
+              ),
+              splashColor: Colors.blue[500],
+              onPressed: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Register(),
+                  ),
+                );
+              },
+              //* async {
+              //*print(email);
+              //*print(password);
+              //*}
+            ),
           ],
         )),
       ),

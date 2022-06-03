@@ -42,6 +42,7 @@ class LandingPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Authenticate(),
+                    
                   ),
                 );
               },
@@ -53,24 +54,6 @@ class LandingPage extends StatelessWidget {
           height: 600,
           width: 600,
         )
-        // bottomNavigationBar: BottomNavigationBar(
-        //   items: const [
-        //     BottomNavigationBarItem(
-        //       label: 'Admin',
-        //       icon: Icon(Icons.admin_panel_settings)
-        //     ),
-
-        //     BottomNavigationBarItem(
-        //       label: 'Wifi',
-        //       icon: Icon(Icons.wifi)
-        //     ),
-
-        //     BottomNavigationBarItem(
-        //       label: 'Hotspot',
-        //       icon: Icon(Icons.wifi_tethering)
-        //     )
-        //   ],
-        // ),
         );
   }
 }

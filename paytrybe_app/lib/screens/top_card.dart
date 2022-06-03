@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TopNeuCard extends StatelessWidget {
-  // final String balance;
-  // final String income;
-  // final String expense;
-
-  // TopNeuCard({
-  //   required this.balance,
-  //   required this.expense,
-  //   required this.income,
-  // });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
