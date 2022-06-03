@@ -1,16 +1,10 @@
-# paytrybe_app
+# Paytrybe App
 
-A new Flutter project.
+![github](https://img.shields.io/badge/App%20build-passed-blue?style=plastic&logo=github&logoColor=white)
+# Built with:
+![PUB](https://img.shields.io/badge/pub-v5.1.0-blue?style=plastic&logo=pub&logoColor=white)
+![firebase](https://img.shields.io/badge/Firebase-SDK%20Release%20v9.9.0-orange?style=plastic&logo=firebase&logoColor=yellow)
+![Gsheet](https://img.shields.io/badge/Google%20Sheet-API-green?style=plastic&logo=google&logoColor=white)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ ![](https://github.com/Logahn/Floating_Blue/blob/main/paytrybe_app/App_run.gif?raw=true)" 
+<br>
